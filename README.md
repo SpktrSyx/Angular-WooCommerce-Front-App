@@ -36,7 +36,7 @@ Gérer la boutique **WooCommerce** (voir si possible les 2 boutiques de la clien
 
 This repository is a reupload, public this time, of the **Angular application** that I have created during the training workshop in Graine de Zèle in 2020, in teleworking.
 
-[:clipboard: Mes recherches](https://start.me/p/nRg0pn/dwwm-stage-cindy)
+[:clipboard: My searches](https://start.me/p/nRg0pn/dwwm-stage-cindy)
 
 
 ## :round_pushpin: Goal : 
