@@ -41,7 +41,7 @@ This repository is a reupload, public this time, of the **Angular application** 
 
 ## :round_pushpin: Goal : 
 
-Manage the WooCommerce shop (even if it's possible the 2 client's shops, the other is an Etsy shop) on a globally way. The mobile application will have to be divided in four parts to highlight orders, products, statistics of the shop and users accounts that will be able to connect the application if the client wants to delegate tasks to someone else for example.
+Manage the **WooCommerce** shop (even if it's possible the 2 client's shops, the other is an Etsy shop) on a globally way. The mobile application will have to be divided in four parts to highlight **orders**, **products**, **statistics** of the shop and **users accounts** that will be able to connect the application if the client wants to delegate tasks to someone else for example.
 
 - Simplify client's interactions with her shop
 - be clear, refined and effective
