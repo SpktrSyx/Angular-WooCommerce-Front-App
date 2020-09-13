@@ -1,0 +1,54 @@
+ion-spinner {
+    margin: auto;
+}
+
+ion-row.circle-data {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 10%;
+    padding-bottom: 3%;
+}
+
+ion-col.outer-circle {
+    border-radius: 50%;
+    height: 11.vh;
+}
+
+div.inner-circle {
+    width: auto;
+    height: 11vh;
+    background-size: contain;
+    background-color: rgba(117, 190, 218, 0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+google-chart {
+    width: 100%; 
+    max-height: 55%;
+    margin-top: 15px;
+    align-items: center;
+}
+
+ion-row.charts {
+    margin:0 !important;
+}
+
+#customers{
+    box-shadow: 0px 0px 10px 0px#43459d;
+}
+#orders{
+    box-shadow: 0px 0px 10px 0px #1c91c0;
+}
+#sales{
+    box-shadow: 0px 0px 10px 0px#e2431e;
+}
+#shipping{
+    box-shadow: 0px 0px 10px 0px#f1ca3a;
+}

@@ -1,0 +1,97 @@
+<ion-content *ngIf="!order" id="loader">
+    <ion-grid style="height: 100%">
+        <ion-row class="loader" justify-content-center align-items-center style="height: 100%; flex-direction: column">
+            <ion-spinner name="lines"></ion-spinner>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+<ion-content *ngIf="order" class="ordermodal-page page" id="print-page">
+    <section class="detail-page container">
+        <ion-toolbar>
+            <ion-title class="ion-text-center">
+                Commande n°{{ order.number }}
+                <ion-icon (click)="closeModal()" name="close-circle"></ion-icon>
+            </ion-title>
+        </ion-toolbar>
+
+        <ion-row class="header row-space">
+            <ion-col size="5" class="ion-text-start">
+                <p>Passée le {{ order.date_created | date: 'dd/MM/yyyy'}}</p>
+            </ion-col>
+            <ion-col size="5">
+                <ion-img align-items-center src="assets/img/logo-sansfond.png"></ion-img>
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="products row-space">
+            <ion-col>Produits :</ion-col>
+            <ion-row>
+                <ion-list *ngFor="let items of order.line_items, let index = index;" class="ion-text-end">
+                    <ion-item>
+                        <ion-col size="4">
+                            <p>{{ items.name }}</p>
+                        </ion-col>
+                        <ion-col size="4" class="ion-text-center">
+                            <p>quantité : {{ items.quantity }}</p>
+                        </ion-col>
+                        <ion-col size="4" class="ion-text-center">
+                            <p>prix : {{ items.total }}</p>
+                        </ion-col>
+                    </ion-item>
+                </ion-list>
+            </ion-row>
+        </ion-row>
+
+
+        <ion-row class="address block">
+            <ion-col>Adresse : </ion-col>
+            <ion-row>
+                <ion-col size="7" class="ion-text-start">
+                    <p>{{ order.shipping.last_name | titlecase }} {{ order.shipping.first_name }}
+                        <br />{{ order.shipping.address_1 | titlecase}}
+                        <br />{{ order.shipping.address_2 | titlecase}}
+                        <br />{{ order.shipping.postcode }} {{ order.shipping.city | titlecase}}
+                        {{ order.shipping.state | titlecase}}
+                        <br />{{ order.shipping.country | titlecase}}
+                    </p>
+                </ion-col>
+                <ion-col size="5">
+                    <p>Frais de port : {{ order.shipping_total }} </p>
+                    <p>Total : {{ order.total }} </p>
+                    <p>Moyen de paiement : {{ order.payment_method_title }}</p>
+                </ion-col>
+                <ion-row *ngIf="trackingId" class="shipping">
+                    <ion-col>Numéro de suivi : </ion-col>
+                    <ion-row>
+                        <ion-col class="ion-text-start">
+                            <p>{{ trackingId }}</p>
+                        </ion-col>
+                    </ion-row>
+                </ion-row>
+            </ion-row>
+        </ion-row>
+
+        <ion-row class="message">
+            <ion-col size="6">
+                Message :
+                <p>{{ order.customer_note | lowercase }}</p>
+            </ion-col>
+
+            <ion-col size="6">
+                <ion-button size="small" color="light" expand="block"
+                    (click)="openToMail(order.billing.email, order.number)">
+                    Envoyer <br />
+                    un message</ion-button>
+                <ion-button size="small" color="light" expand="block" (click)="printOrder()">
+                    Imprimer
+                </ion-button>
+                <ion-button *ngIf="order.status != 'completed'" size="small" color="danger" expand="block" (click)="askForTracking(orderId)">
+                    Marquer
+                    <br />comme traité
+                </ion-button>
+            </ion-col>
+        </ion-row>
+
+    </section>
+</ion-content>

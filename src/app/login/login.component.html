@@ -1,0 +1,27 @@
+<ion-content>
+    <div class="card-css">
+        <ion-card>
+            <form [formGroup]="loginForm" (ngSubmit)="login()" id="loginForm">
+                <ion-card-header class="ion-text-center">
+                    <ion-img class="icon ion-text-center" src="assets/icon/026-shopping-bag.png"></ion-img>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-col class="ion-text-center">
+                        <ion-item>
+                            <ion-label>Identifiant :</ion-label>
+                            <ion-input type="email" formControlName="email"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Mot de passe :</ion-label>
+                            <ion-input type="password" size="8" formControlName="password"></ion-input>
+                        </ion-item>
+                        <ion-button class="submit" ion-button type="submit" fill="outline" shape="round"
+                            [disabled]="!loginForm.valid">
+                            Valider
+                        </ion-button>
+                    </ion-col>
+                </ion-card-content>
+            </form>
+        </ion-card>
+    </div>
+</ion-content>

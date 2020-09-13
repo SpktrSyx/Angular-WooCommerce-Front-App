@@ -1,0 +1,27 @@
+/* ion-card{
+    width: 80%;
+} */
+
+div.card-css {
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+ion-card-content{
+    display: flex;
+}
+
+ion-item {
+    font-size: 14px;
+}
+
+ion-button {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.log {
+    width: 80%;
+}

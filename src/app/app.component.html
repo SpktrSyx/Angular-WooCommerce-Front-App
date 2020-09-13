@@ -1,0 +1,29 @@
+<ion-app>
+  <ion-router-outlet id="main-content">
+  </ion-router-outlet>
+
+  <ion-tabs>
+    <!-- #tabs (ionTabsWillChange)="gets(tabs)" -->
+    <ion-tab-bar slot="bottom" id="main-toolbar">
+      <ion-tab-button routerLink="/order" tab="order">
+        <ion-icon name="cube-outline"></ion-icon>
+        <ion-label>Commandes</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button routerLink="/product" tab="product">
+        <ion-icon name="library-outline"></ion-icon>
+        <ion-label>Produits</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button routerLink="/statistic" tab="statistic">
+        <ion-icon name="bar-chart-outline"></ion-icon>
+        <ion-label>Statistiques</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button routerLink="/account" tab="account">
+        <ion-icon class="icon-toolbar" name="people-outline"></ion-icon>
+        <ion-label>Comptes</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-app>

@@ -1,0 +1,27 @@
+<section class="statistic-page">
+  <form [formGroup]="yearForm" (ngSubmit)="openModal()">
+    <ion-row>
+      <ion-col>
+        <ion-label class="year">Choisir l'année</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-select multiple="false" formControlName="year">
+          <ion-select-option value="2020">2020</ion-select-option>
+          <ion-select-option value="2019">2019</ion-select-option>
+          <ion-select-option value="2018">2018</ion-select-option>
+          <ion-select-option value="2017">2017</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+        <ion-col>
+          <ion-button class="submit-statistic"
+          expand="block"
+          fill="outline"
+          shape="round"
+          type="submit"
+          [disabled]="!yearForm.valid">
+          Valider
+        </ion-button>
+      </ion-col>
+  </form>
+</section>

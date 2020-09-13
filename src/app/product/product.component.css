@@ -1,0 +1,24 @@
+ion-spinner {
+    margin: auto;
+}
+
+ion-segment {
+    align-items: center;
+}
+
+section.product-page {
+    margin-top: 55px;
+    line-height: 1.5em;
+}
+
+ion-list {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+ion-img {
+    width: 30px;
+    height: auto;
+}

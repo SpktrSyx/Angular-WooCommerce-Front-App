@@ -1,0 +1,55 @@
+<ion-content *ngIf="error">
+
+</ion-content>
+
+<ion-toolbar class="type-toolbar" id="type-toolbar">
+    <ion-segment class="toolbar2">
+        <ion-col size="5">
+            <ion-label>Nom</ion-label>
+        </ion-col>
+        <ion-col size="3">
+            <ion-label>En ligne</ion-label>
+        </ion-col>
+        <ion-col size="2">
+            <ion-label>Prix</ion-label>
+        </ion-col>
+        <ion-col size="2">
+            <ion-label>Editer</ion-label>
+        </ion-col>
+    </ion-segment>
+</ion-toolbar>
+
+<ion-content *ngIf="!productList" id="loader">
+    <ion-grid style="height: 100%">
+        <ion-row class="loader" justify-content-center align-items-center style="height: 100%; flex-direction: column">
+            <ion-spinner name="lines"></ion-spinner>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+<ion-content *ngIf="productList" class="product-page" style="height: 100%">
+    <section class="product-page">
+        <ion-list *ngFor="let product of productList" class="productList infos">
+            <ion-label lines="inset" inset="true">
+                <ion-row class="list">
+                    <ion-col size="6">
+                        {{ product.name }}
+                    </ion-col>
+                    <ion-col size="3">
+                        <ion-row>
+                            <!-- poser des conditions pour l'affichage -->
+                            <ion-img src="assets/img/woo.png"></ion-img>
+                            <ion-img src="assets/img/etsy.png"></ion-img>
+                        </ion-row>
+                    </ion-col>
+                    <ion-col size="2">
+                        {{ product.price }}€
+                    </ion-col>
+                    <ion-col size="1">
+                        <ion-icon (click)="openModal(product.id)" name="create-outline"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-label>
+        </ion-list>
+    </section>
+</ion-content>

@@ -1,0 +1,69 @@
+<ion-content *ngIf="error">
+
+</ion-content>
+
+<ion-content *ngIf="!userList" id="loader">
+    <ion-grid style="height: 100%">
+        <ion-row class="loader" justify-content-center align-items-center style="height: 100%; flex-direction: column">
+            <ion-spinner name="lines"></ion-spinner>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+<ion-toolbar class="type-toolbar" id="type-toolbar">
+    <ion-segment class="toolbar2">
+        <ion-col size="7">
+            <ion-label>Compte</ion-label>
+        </ion-col>
+        <ion-col size="5">
+            <ion-label>Type</ion-label>
+        </ion-col>
+    </ion-segment>
+</ion-toolbar>
+
+<ion-content *ngIf="userList" class="account-page ion-padding" style="height: 100%">
+
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+        <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+            <ion-fab-button (click)="openModal()">
+                <ion-img src="assets/icon/database.png"></ion-img>
+            </ion-fab-button>
+        </ion-fab-list>
+        <ion-fab-list side="start">
+            <ion-fab-button (click)="logout()">
+                <ion-img src="assets/icon/048-arrow.png"></ion-img>
+            </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
+
+    <section class="account-page">
+        <ion-list *ngFor="let index = index; let user of userList" class="userList">
+            <ion-item [id]="index">
+                <ion-label lines="inset" inset="true">
+                    <ion-row class="list">
+                        <ion-col class="account-infos" size="9">
+                            <p>{{ user.name }}
+                                <br />{{ user.mail }}
+                                <br />Compte créé le : {{ user.creation_date | date: 'dd/MM/yyyy' }}
+                                <br />niveau d'accès : {{ user.access }}</p>
+                        </ion-col>
+                        <ion-col class="access-infos" *ngIf="user.name != 'Compte cliente'" size="3">
+                            <ion-row class="img">
+                                <ion-img class="icon up-del" (click)="updateAlert(user.id)" src="assets/icon/gamep.png">
+                                </ion-img>
+                                <ion-img class="icon up-del" (click)="deleteAlert(user.id)"
+                                    src="assets/icon/trash-bin.png"></ion-img>
+                            </ion-row>
+                        </ion-col>
+                        <ion-col class="access-infos space-crown" *ngIf="user.name === 'Compte cliente'" size="3">
+                            <ion-img class="icon bounce" src="assets/icon/chess-piece.png"></ion-img>
+                        </ion-col>
+                    </ion-row>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </section>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "manage_woo_shop",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

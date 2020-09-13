@@ -1,0 +1,9 @@
+section.statistic-page {
+    margin: auto;
+}
+
+ion-label.year {
+    font-weight: 600;
+    font-size: 20px;
+}
+

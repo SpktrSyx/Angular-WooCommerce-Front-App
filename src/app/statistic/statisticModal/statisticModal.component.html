@@ -1,0 +1,74 @@
+<!-- 
+                width="360"
+                [title]="chart.title"
+                [type]="chart.type"
+                [data]="chart.data"
+                [columnNames]="chart.columnNames"
+                [roles]="chart.roles"
+                [options]="chart.options"
+                (ready)="onReady()"
+                (select)="onSelect($event)"
+                (error)="onError($event)"
+                (mouseenter)="onMouseEnter($event)"
+                (mouseleave)="onMouseLeave($event)" -->
+
+<ion-content *ngIf="!statistic" id="loader">
+  <ion-grid class="statisticModal-page" style="height: 100%">
+    <ion-row class="loader" justify-content-center align-items-center style="height: 100%; flex-direction: column">
+      <ion-spinner name="lines"></ion-spinner>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-content *ngIf="statistic">
+    <section class="statisticmodal-page" style="height: 100%">
+      <ion-toolbar id="second-toolbar">
+        <ion-title class="ion-text-center">
+          Année {{ year }}
+          <ion-icon (click)="closeModal()" name="close-circle"></ion-icon>
+        </ion-title>
+      </ion-toolbar>
+
+      <ion-row class="ion-text-center circle-data">
+        <ion-col class="outer-circle" id="orders">
+          <div class="inner-circle" id="orders">
+            {{ statistic[0].total_orders }}
+            <br />Ventes
+          </div>
+        </ion-col>
+        <ion-col class="outer-circle" id="customers">
+          <div class="inner-circle" id="customers">
+            {{ statistic[0].total_customers }}
+            <br />Nvx Clients
+          </div>
+        </ion-col>
+        <ion-col class="outer-circle" id="shipping">
+          <div class="inner-circle" id="shipping">
+            {{ statistic[0].total_shipping | number : fractionSize }} €
+            <br />F.d.p.
+          </div>
+        </ion-col>
+        <ion-col class="outer-circle" id="sales">
+          <div class="inner-circle" id="sales">
+            {{ statistic[0].net_sales | number : fractionSize }} €
+            <br />C.A.
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="charts">
+        <ion-col class="chart" *ngFor="let chart of charts">
+            <google-chart
+              width="360"
+              [title]="chart.title"
+              [type]="chart.type"
+              [data]="chart.data"
+              [columns]="chart.columns"
+              [options]="chart.options"
+              >
+            </google-chart>
+          </ion-col>
+        </ion-row>
+        
+    </section>
+</ion-content>

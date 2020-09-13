@@ -1,0 +1,57 @@
+<div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+<ion-card >
+    <form [formGroup]="userForm" (ngSubmit)="saveUser()" id="userForm">
+        <ion-card-header class="ion-text-center">
+            <ion-col size="7">
+                <ion-img class="icon" src="assets/icon/computerprofile.png"></ion-img>
+            </ion-col>
+            <ion-col size="5">
+                <ion-card-title class="ion-text-start" >Nouveau Compte</ion-card-title>
+            </ion-col>
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-row>
+                <ion-col class="ion-text-center">
+                    <ion-row>
+                        <ion-item>
+                            <ion-label>Nom :</ion-label>
+                            <ion-input type="text" formControlName="name"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Niveau d'accès :</ion-label>
+                            <ion-select formControlName="access">
+                                <ion-select-option value="1">1</ion-select-option>
+                                <ion-select-option value="2">2</ion-select-option>
+                                <ion-select-option value="3">3</ion-select-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-row>
+                    <ion-item>
+                        <ion-label>Mail :</ion-label>
+                        <ion-input type="email" formControlName="email"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Mot de passe :</ion-label>
+                        <ion-input type="password" size="8" formControlName="password"></ion-input>
+                    </ion-item>
+                    <ion-row class="nav-buttons">
+                        <ion-col>
+                            <ion-button class="submit-user ion-text-center" (click)="cancel()" ion-button
+                                fill="outline" shape="round">
+                                Retour
+                            </ion-button>
+                        </ion-col>
+                        <ion-col>
+                            <ion-button class="submit-user ion-text-center" ion-button type="submit" fill="outline"
+                                shape="round" [disabled]="!userForm.valid">
+                                Valider
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </form>
+</ion-card>
+</div>

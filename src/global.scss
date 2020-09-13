@@ -1,0 +1,147 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+* {
+    font-family: 'Quicksand', sans-serif;
+    // font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    
+    a {
+        color: #FF7452;
+    }
+}
+
+#main-toolbar {
+    --background: #9294D1;
+}
+
+ion-tab-button {
+    --color: #4F4685;
+    --color-selected: white;
+    --ripple-color: #353885;
+}
+
+#second-toolbar{
+    --background: #9294D1;
+    --color: white;
+}
+
+ion-segment-button {
+    --color-checked: #9294D1;
+    --ripple-color: #353885;
+    --border-color:  #353885;
+}
+
+ion-spinner {
+    --color: #353885;
+}
+
+span.alert-button-inner {
+    color: #4F4685;
+}
+
+ion-button {
+    --color: #4F4685;
+    --ripple-color: #353885;
+    --border-color:  #353885;
+}
+
+ion-fab-button {
+    --background: #9294D1;
+    --ripple-color: #353885;
+}
+
+ion-card-header {
+    --background: #9294D1;
+    ion-card-title{
+        --color: white;
+    }
+}
+
+ion-alert {
+    --color: #4F4685;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.selection-toolbar {
+    // margin-top: 55px;
+    position: fixed;
+}
+
+.type-toolbar {
+    position: fixed;
+    --border-color: #D6D5B3;
+    --border-width: 1px;
+}
+
+.infos{
+    font-size: 0.9em;
+}
+
+.list {
+    align-items: center;
+}
+
+.card-modal {
+    display: inherit;
+    --background: transparent;
+}
+
+
+// -- MESSAGES --
+
+ion-toast {
+    text-align: center;   
+    --max-height: 20vh;
+    --max-width: 80vh;
+}
+
+.ok {
+    --background: #54D194;
+}
+
+.error {
+    --background: #D16254;
+}
+
+
+// -- ANIMATION --
+
+.bounce{
+    position: relative;
+    bottom: 0;
+            transition: all 0.8s ease;
+            animation: anim 0.8s infinite ease alternate;
+}
+
+@keyframes anim {
+    from {bottom: 0px;}
+    to {bottom: 10px;} 
+    }
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
